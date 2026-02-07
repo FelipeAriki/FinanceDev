@@ -1,20 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace FinanceDev.Application.ViewModels;
 
-namespace FinanceDev.Application.DTOs;
-
-public class TransactionCreateDTO
+public class TransactionViewModel
 {
     public int Id { get; set; }
-    [Required]
     public int CategoryId { get; set; }
 
-    [Required]
     public char Type { get; set; }
 
-    [Required]
     public decimal Amount { get; set; }
 
-    [Required]
     public DateTime Date { get; set; }
 
     public string Description { get; set; } = string.Empty;

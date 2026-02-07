@@ -30,20 +30,24 @@ public class TransactionRepository : ITransactionRepository
         return await conn.QueryFirstOrDefaultAsync<Transaction?>(sql, new { Id = id });
     }
 
-    public Task<int> CreateTransactionAsync(Transaction transaction)
+    public async Task<int> CreateTransactionAsync(Transaction transaction)
     {
-        throw new NotImplementedException();
+        using var conn = CreateConnection();
+        var sql = "INSERT INTO Transactions(Type, CategoryId, Description, Amount, Date) VALUES(@Type, @CategoryId, @Description, @Amount, @Date)";
+        return await conn.ExecuteAsync(sql, transaction);
     }
 
-    public Task<int> UpdateTransactionAsync(Transaction transaction)
+    public async Task<int> UpdateTransactionAsync(Transaction transaction)
     {
-        throw new NotImplementedException();
+        using var conn = CreateConnection();
+        var sql = "UPDATE Transactions SET Type = @Type, CategoryId = @CategoryId, Description = @Description, Amount = @Amount, Date = @Date WHER Id = @Id";
+        return await conn.ExecuteAsync(sql, transaction);
     }
 
-    public Task<int> DeleteTransactionAsync(int id)
+    public async Task<int> DeleteTransactionAsync(int id)
     {
         using var conn = CreateConnection();
         var sql = "DELETE FROM Transactions WHERE Id = @Id";
-        return conn.ExecuteAsync(sql, new { Id = id });
+        return await conn.ExecuteAsync(sql, new { Id = id });
     }
 }

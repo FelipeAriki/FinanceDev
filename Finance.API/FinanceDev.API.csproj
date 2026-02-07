@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FinanceDev.Application\FinanceDev.Application.csproj" />
     <ProjectReference Include="..\FinanceDev.Core\FinanceDev.Core.csproj" />
     <ProjectReference Include="..\FinanceDev.Infrastructure\FinanceDev.Infrastructure.csproj" />

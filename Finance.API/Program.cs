@@ -1,3 +1,4 @@
+using FinanceDev.Application.Services;
 using FinanceDev.Core.Repositories;
 using FinanceDev.Infrastructure.Repositories;
 
@@ -11,6 +12,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<IFinanceService, FinanceService>();
 
 var app = builder.Build();
 
