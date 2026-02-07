@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Finance.API/FinanceDev.API.csproj" />
+  <Project Path="FinanceDev.Application/FinanceDev.Application.csproj" Id="e0dfca8a-2efc-47dd-a63d-46ae62e123fe" />
+  <Project Path="FinanceDev.Core/FinanceDev.Core.csproj" Id="030ef0f2-0672-4f0d-bf02-e131c8723e67" />
+  <Project Path="FinanceDev.Infrastructure/FinanceDev.Infrastructure.csproj" Id="bc788a09-31a1-4492-9d95-193d2d65abbd" />
+</Solution>
